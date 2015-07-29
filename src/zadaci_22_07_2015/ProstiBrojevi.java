@@ -21,11 +21,9 @@ public class ProstiBrojevi {
 		for (int i = startNumber; i <= stopNumber; i++) {//petlja se vrti u rasponu od startNumber do stopNumber
 			boolean isPrime = true;//isPrime oznacava da li je broj prost ili ne
 			/*	
-			 * provjeravamo da li je broj prost tako sto ga dijelimo sa brojevima od 2 do polovine tog broja
-			 *  nema potrebe potrebe da provjeravo do tog broja jer ako nije djeljiv sa brojevimo do njegove polovine,
-			 *  sigurno nece biti djeljiv ni sa brojevima od njegove polovine pa navise
+			 * provjeravamo da li je broj prost tako sto ga dijelimo sa brojevima od 2 do tog broja
 			 */
-			for (int j = 2; j < i/2; j++) {
+			for (int j = 2; j < i; j++) {
 				if (i % j == 0) {//ukoliko je broj djeljiv nekim brojem osim samim sobom, onda nije prost
 					isPrime = false;
 					break;
