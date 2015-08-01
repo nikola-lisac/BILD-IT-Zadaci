@@ -11,7 +11,7 @@ public class Sum {
 	 * dok ne dodje do 3 koji je posljednji djelilac
 	 */
 	public static double sum(int number) {
-		// ako je djelilac 3 vraca 0
+		// ako je djelilac manji od 3 vraca 0
 		if (number < 3) {
 			return 0;
 		} else {
