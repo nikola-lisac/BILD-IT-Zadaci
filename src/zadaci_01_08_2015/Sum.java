@@ -23,6 +23,14 @@ public class Sum {
 		
 		double sum=sum(99);//suma
 		System.out.println("Suma iznosi: "+sum);
+		
+//		ista stvar uradjena preko petlje, ali sam htio da provjezbam rekurziju
+//		pa sam uradio ovo gore
+//		double sumLoop=0;
+//		for(int i=1;i<=97;i+=2){
+//			sumLoop+=(i/((double)(i+2)));
+//		}
+//		System.out.println(sumLoop);
 	}
 
 }
