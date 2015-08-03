@@ -37,9 +37,11 @@ public class IntegerToBinary {
 		int number = input.nextInt();//broj
 		input.close();
 		
-		//stampanje broja u binarnom brojnom sistemu
-		System.out.println("Broj u binarnom zapisu: "
-				+ convertIntToBinary(number));
+		if (number > 0){
+			//stampanje broja u binarnom brojnom sistemu
+			System.out.println("Broj u binarnom zapisu: "
+					+ convertIntToBinary(number));
+		}
 	}
 
 }

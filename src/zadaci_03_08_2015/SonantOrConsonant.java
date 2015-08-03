@@ -1,5 +1,11 @@
 package zadaci_03_08_2015;
-
+/*
+ * Zadatak br.3
+ * Napisati program koji pita korisnika da unese slovo 
+ * te provjerava da li je unijeti karakter samoglasnik ili suglasnik.
+ *  Na primjer, ukoliko korisnik unese B, program vraæa da je dati karakter suglasnik. 
+ *  Ukoliko unese A, program vraæa da je dati karakter samoglasnik.
+ */
 import java.util.Scanner;
 
 public class SonantOrConsonant {
@@ -32,12 +38,15 @@ public class SonantOrConsonant {
 		char character = input.next().charAt(0);
 		input.close();
 		
-		//provjera da li je karakter samoglasnik ili suglasnik
+		//provjera da li je karakter samoglasnik
 		if (isSonant(character)) {
 			System.out.println("Karakter je samoglasnik.");
-		}
-		else {
+		}//ako nije samoglasnik i ako je slovo odna je samoglasnik
+		else if (!isSonant(character) && Character.isLetter(character)){
 			System.out.println("Karakter je suglasnik.");
+		}
+		else {//ako nije nijedno, onda je znak ili broj
+			System.out.println("Karakter nije ni suglasnik, ni samoglasnik.");
 		}
 	}
 
