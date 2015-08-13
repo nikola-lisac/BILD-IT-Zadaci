@@ -26,14 +26,21 @@ public class MyPoint {
 
 	/**
 	 * Calculating distance between two MyPoint instances
-	 * @param point
-	 * @return
+	 * @param point  MyPoint instance that we want to check the distance in relation to calling instance
+	 * @return  distance betwwen those two points
 	 */
 	double distance(MyPoint point) {
 		return Math.sqrt(Math.pow(point.getY() - this.getY(), 2)
 				+ Math.pow(point.getX() - this.getX(), 2));
 	}
 
+	/**
+	 * Calculating distance between MyPoint instance and another point 
+	 * whose coordinates are passed as parametars
+	 * @param x  x-coordinate of a point
+	 * @param y  y-coordinate of a point
+	 * @return   distance betwwen those two points
+	 */
 	double distance(double x, double y) {
 		return Math.sqrt(Math.pow(y - this.getY(), 2)
 				+ Math.pow(x - this.getX(), 2));
@@ -49,9 +56,10 @@ public class MyPoint {
 	
 	
 	public static void main(String[] args) {
-		MyPoint pointOne = new MyPoint();
-		MyPoint pointTwo = new MyPoint(10,30.5);
+		MyPoint pointOne = new MyPoint(); //default MyPoint instance (0,0)
+		MyPoint pointTwo = new MyPoint(10,30.5); //instance with defined coords
 		
+		//printing distance
 		System.out.printf("Distance between pointOne and pointTwo is: %.4f",pointOne.distance(pointTwo));
 	}
 }
