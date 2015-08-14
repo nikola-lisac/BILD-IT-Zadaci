@@ -11,14 +11,16 @@ package zadaci_12_08_2015;
  * with specified x- and y-coordinates.
  */
 public class MyPoint {
-	private double x;
-	private double y;
+	private double x; //x coordinate of the point
+	private double y; //y coordinate of the point
 
+	/** Default constructor */
 	MyPoint() {
 		this.x = 0;
 		this.y = 0;
 	}
 
+	/** Constructor for defined x and y coordinates of the point */
 	MyPoint(double x, double y) {
 		this.x = x;
 		this.y = y;
