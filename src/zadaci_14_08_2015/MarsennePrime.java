@@ -11,7 +11,7 @@ public class MarsennePrime {
 
 	public static void main(String[] args) {
 		BigInteger two = new BigInteger("2");//variable with the value 2
-		//peint header
+		//print header
 		System.out.println("p\tp^2-1");
 		System.out.println("-------------------");
 		
