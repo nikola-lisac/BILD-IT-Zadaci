@@ -17,17 +17,19 @@ public class NewSplitMethod {
 	
 	/**
 	 * Check if defined string contains defined character
-	 * @param str  string to check for character
+	 * @param regex  string to check for character
 	 * @param ch   character for checking in the string
 	 * @return     true if the string contains the character,otherwise false
 	 */
-	public static boolean contains(String str, char ch){
-		for(int i = 0; i < str.length(); i++){
-			if(str.charAt(i) == ch) {
-				return true;
-			}
+	public static boolean contains(String regex, char ch){
+		String bl = ch +"";
+		if(bl.matches(regex)){
+			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
+		
 	}
 	
 	/**
@@ -81,9 +83,9 @@ public class NewSplitMethod {
 	/** test */
 	public static void main(String[] args) {
 		//string to be split
-		String str = "Nikola#$has?finished$the#goddamned$#split?method";
+		String str = "Nikola1has2finished3the6goddamned7split8method9";
 		//string with characters to be used as delimeters
-		String regex = "[#?$}";
+		String regex = "[0-9]";
 		
 		//printing string and regex
 		System.out.println("String: "+str);
