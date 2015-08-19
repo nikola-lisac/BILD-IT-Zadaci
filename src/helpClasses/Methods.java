@@ -1,8 +1,13 @@
 package helpClasses;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+/**
+ * Class is consisted of common, reusable methods
+ * @author Nikola Lisicic
+ *
+ */
 public class Methods {
 
 	/**
@@ -50,6 +55,7 @@ public class Methods {
 				
 			} catch (InputMismatchException e) { //if user enters something other than double
 				System.out.println("Wrong input, try again: ");
+				input.nextLine();
 				isOk = false;
 			}
 		}
@@ -58,4 +64,13 @@ public class Methods {
 		return userInput;
 	}
 	
+	/**
+	 * Print any array list, with spaces between elements
+	 * @param list array list to print
+	 */
+	public static <E> void printArrayList(ArrayList <E> list){
+		for(Object object: list){
+			System.out.print(object + " ");
+		}
+	}
 }
