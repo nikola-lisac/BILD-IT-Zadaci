@@ -46,20 +46,21 @@ public class Zadatak05MyStack {
 		
 		// making changes to the original stack
 		date.setTime(156000000000l);
-		original.push(date);
 		original.push("Success!");
-		
-		System.out.println("\nPrinting copy of the stack: ");
-		// printing copied original stack
-		while (!copy.isEmpty()) {
-			System.out.println(copy.pop().toString());
-		}
+		original.push(date);
 		
 		System.out.println("\nPrinting changed original stack");
 		// printing changed original stack
 		while (!original.isEmpty()) {
 			System.out.println(original.pop().toString());
 		}
+		
+		System.out.println("\nPrinting copy of the original stack: ");
+		// printing copied original stack
+		while (!copy.isEmpty()) {
+			System.out.println(copy.pop().toString());
+		}
+		
 	}
 }
 
