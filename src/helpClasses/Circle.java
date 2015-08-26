@@ -4,7 +4,7 @@ package helpClasses;
  * @author Nikola Lisicic
  *
  */
-public class Circle {
+public class Circle extends GeometricObject {
 	// radius of the circle
 	private double radius = 1.0;
 
@@ -21,7 +21,7 @@ public class Circle {
 	 * calculating the area of the circle
 	 * @return area of the circle
 	 */
-	double getArea() {
+	public double getArea() {
 		return radius * radius * Math.PI;
 	}
 
@@ -29,7 +29,7 @@ public class Circle {
 	 * calculating the perimeter of the circle
 	 * @return  perimeter of the circle
 	 */
-	double getPerimeter() {
+	public double getPerimeter() {
 		return 2 * radius * Math.PI;
 	}
 	
