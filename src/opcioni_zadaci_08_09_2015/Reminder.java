@@ -56,18 +56,19 @@ public class Reminder extends Calendar {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/calendar", "root", "nikola");
 			if (connection != null) {
-			}
-			String sql = "INSERT INTO remainder(Date,Note) VALUES(?,?);";
-			// statement
-			PreparedStatement tempStat = connection.prepareStatement(sql);
-			/*
-			 * petlja prolazi sve podsjetnike u i za svaki upisuje datum
-			 * podsjetnika i tekst podsjetnika u bazu podataka
-			 */
-			for (Reminder rem : reminderList) {
-				tempStat.setString(1, rem.dateOfReminder);
-				tempStat.setString(2, rem.reminderNote);
-				tempStat.executeUpdate();
+
+				String sql = "INSERT INTO remainder(Date,Note) VALUES(?,?);";
+				// statement
+				PreparedStatement tempStat = connection.prepareStatement(sql);
+				/*
+				 * petlja prolazi sve podsjetnike u i za svaki upisuje datum
+				 * podsjetnika i tekst podsjetnika u bazu podataka
+				 */
+				for (Reminder rem : reminderList) {
+					tempStat.setString(1, rem.dateOfReminder);
+					tempStat.setString(2, rem.reminderNote);
+					tempStat.executeUpdate();
+				}
 			}
 		} catch (Exception el) {
 			el.printStackTrace();
@@ -95,20 +96,21 @@ public class Reminder extends Calendar {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/calendar", "root", "nikola");
 			if (connection != null) {
-			}
-			Statement statement = connection.createStatement();
 
-			ResultSet result = statement.executeQuery("SELECT * FROM remainder;");
-			
-			// unos datuma i teksta podsjetnika sve dok postoji upis u bazi, 
-			// pravljenje nove instance Reminder na osnovu polja baze podataka i
-			// smjestanje instanci u listu
-			while (result.next()) {
-				Reminder rem = new Reminder(result.getString(1), result.getString(2));
-				tempReminderList.add(rem);
-			}
-			reminderList = tempReminderList;
+				Statement statement = connection.createStatement();
 
+				ResultSet result = statement.executeQuery("SELECT * FROM remainder;");
+
+				// unos datuma i teksta podsjetnika sve dok postoji upis u bazi,
+				// pravljenje nove instance Reminder na osnovu polja baze
+				// podataka i
+				// smjestanje instanci u listu
+				while (result.next()) {
+					Reminder rem = new Reminder(result.getString(1), result.getString(2));
+					tempReminderList.add(rem);
+				}
+				reminderList = tempReminderList;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
